@@ -196,7 +196,7 @@ func LoadFile(filename string) (*Config, error) {
 	if err != nil {
 		return nil, err
 	}
-	cfg, err := Load(string(content))
+	cfg, err := Load(os.ExpandEnv(string(content)))
 	if err != nil {
 		return nil, err
 	}
